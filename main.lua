@@ -417,7 +417,7 @@ bald.MouseButton1Click:connect(function()
 	for i, v in pairs(players) do
 		for i, v in pairs(Players[v].Character:GetChildren()) do
 			if v:IsA("Accessory") then
-				_G.Destroy(v)
+				getgenv().Destroy(v)
 			end
 		end
 	end
@@ -437,7 +437,7 @@ ragdoll.TextSize = 23.000
 ragdoll.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("Humanoid"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("Humanoid"))
 	end
 end)
 
@@ -456,9 +456,9 @@ kill.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
 		if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
-			_G.Destroy(Players[v].Character.Torso.Neck)
+			getgenv().Destroy(Players[v].Character.Torso.Neck)
 		else
-			_G.Destroy(Players[v].Character.Head.Neck)
+			getgenv().Destroy(Players[v].Character.Head.Neck)
 		end
 	end
 end)
@@ -477,9 +477,9 @@ naked.TextSize = 23.000
 naked.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("Pants"))
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("Shirt"))
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("ShirtGraphic"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("Pants"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("Shirt"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("ShirtGraphic"))
 	end
 end)
 
@@ -522,7 +522,7 @@ rtools.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text)
 	for i, v in pairs(players) do
 		for i, v in pairs(Players[v]:FindFirstChildOfClass("Backpack"):GetChildren()) do
-			_G.Destroy(v)
+			getgenv().Destroy(v)
 		end
 	end
 end)
@@ -543,23 +543,23 @@ box.MouseButton1Click:connect(function()
 	for i, v in pairs(players) do
 		for i, v in pairs(Players[v].Character:GetChildren()) do
 			if v:IsA("Accessory") then
-				_G.Destroy(v)
+				getgenv().Destroy(v)
 			end
 		end
 		for i, v in pairs(Players[v].Character:GetChildren()) do
 			if v:IsA("CharacterMesh") then
-				_G.Destroy(v)
+				getgenv().Destroy(v)
 			end
 		end
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("Pants"))
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("Shirt"))
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("ShirtGraphic"))
-		_G.Destroy(Players[v].Character["Left Arm"])
-		_G.Destroy(Players[v].Character["Left Leg"])
-		_G.Destroy(Players[v].Character["Right Arm"])
-		_G.Destroy(Players[v].Character["Right Leg"])
-		_G.Destroy(Players[v].Character.Head:FindFirstChildOfClass("SpecialMesh"))
-		_G.Destroy(Players[v].Character.Head:FindFirstChildOfClass("Decal"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("Pants"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("Shirt"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("ShirtGraphic"))
+		getgenv().Destroy(Players[v].Character["Left Arm"])
+		getgenv().Destroy(Players[v].Character["Left Leg"])
+		getgenv().Destroy(Players[v].Character["Right Arm"])
+		getgenv().Destroy(Players[v].Character["Right Leg"])
+		getgenv().Destroy(Players[v].Character.Head:FindFirstChildOfClass("SpecialMesh"))
+		getgenv().Destroy(Players[v].Character.Head:FindFirstChildOfClass("Decal"))
 	end
 end)
 
@@ -577,7 +577,7 @@ sink.TextSize = 23.000
 sink.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character.HumanoidRootPart)
+		getgenv().Destroy(Players[v].Character.HumanoidRootPart)
 	end
 end)
 
@@ -592,10 +592,10 @@ local slockk = false
 local banned = {}
 Players.PlayerAdded:connect(function(plr)
 	if slockk then
-		_G.Destroy(plr)
+		getgenv().Destroy(plr)
 	end
 	if FindInTable(banned, plr.UserId) then
-		_G.Destroy(plr)
+		getgenv().Destroy(plr)
 	end
 end)
 
@@ -614,7 +614,7 @@ ban.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
 		table.insert(banned, Players[v].UserId)
-		_G.Destroy(Players[v])
+		getgenv().Destroy(Players[v])
 	end
 end)
 
@@ -4383,7 +4383,7 @@ explorer.MouseButton1Click:connect(function()
 
 		local clipboard = {}
 		local function delete(o)
-			_G.Destroy(o)
+			getgenv().Destroy(o)
 		end
 
 		local getTextWidth do
@@ -6083,7 +6083,7 @@ explorer.MouseButton1Click:connect(function()
 
 			--local clipboard = {}
 			local function delete(o)
-				_G.Destroy(o)
+				getgenv().Destroy(o)
 			end
 
 			makeButton(ACTION_EDITQUICKACCESS,ACTION_EDITQUICKACCESS,"Options",true,function()return true end).MouseButton1Click:connect(function()
@@ -9265,7 +9265,7 @@ kick.TextSize = 23.000
 kick.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v])
+		getgenv().Destroy(Players[v])
 	end
 end)
 
@@ -9283,7 +9283,7 @@ blockhead.TextSize = 23.000
 blockhead.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character.Head:FindFirstChildOfClass("SpecialMesh"))
+		getgenv().Destroy(Players[v].Character.Head:FindFirstChildOfClass("SpecialMesh"))
 	end
 end)
 
@@ -9301,7 +9301,7 @@ stools.TextSize = 23.000
 stools.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("Humanoid"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("Humanoid"))
 		repeat wait() until Players[v].Character:FindFirstChildOfClass("Humanoid").Parent == nil
 		for _, v in ipairs(Players[v].Character:GetChildren()) do
 			if v:IsA("BackpackItem") and v:FindFirstChild("Handle") then
@@ -9325,7 +9325,7 @@ noface.TextSize = 23.000
 noface.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character.Head:FindFirstChildOfClass("Decal"))
+		getgenv().Destroy(Players[v].Character.Head:FindFirstChildOfClass("Decal"))
 	end
 end)
 
@@ -9343,7 +9343,7 @@ punish.TextSize = 23.000
 punish.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character)
+		getgenv().Destroy(Players[v].Character)
 	end
 end)
 
@@ -9361,7 +9361,7 @@ pantsless.TextSize = 23.000
 pantsless.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("Pants"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("Pants"))
 	end
 end)
 
@@ -9379,7 +9379,7 @@ shirtless.TextSize = 23.000
 shirtless.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("Shirt"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("Shirt"))
 	end
 end)
 
@@ -9397,7 +9397,7 @@ tshirtless.TextSize = 23.000
 tshirtless.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("ShirtGraphic"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("ShirtGraphic"))
 	end
 end)
 
@@ -9415,7 +9415,7 @@ noregen.TextSize = 23.000
 noregen.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character:FindFirstChild("Health"))
+		getgenv().Destroy(Players[v].Character:FindFirstChild("Health"))
 	end
 end)
 
@@ -9433,7 +9433,7 @@ stopanim.TextSize = 23.000
 stopanim.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
-		_G.Destroy(Players[v].Character:FindFirstChildOfClass("Humanoid"):FindFirstChildOfClass("Animator"))
+		getgenv().Destroy(Players[v].Character:FindFirstChildOfClass("Humanoid"):FindFirstChildOfClass("Animator"))
 	end
 end)
 
@@ -9453,7 +9453,7 @@ blockchar.MouseButton1Click:connect(function()
 	for i, v in pairs(players) do
 		for i, v in pairs(Players[v].Character:GetChildren()) do
 			if v:IsA("CharacterMesh") then
-				_G.Destroy(v)
+				getgenv().Destroy(v)
 			end
 		end
 	end
@@ -9474,15 +9474,15 @@ nolimbs.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
 		if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
-			_G.Destroy(Players[v].Character["Left Arm"])
-			_G.Destroy(Players[v].Character["Left Leg"])
-			_G.Destroy(Players[v].Character["Right Arm"])
-			_G.Destroy(Players[v].Character["Right Leg"])
+			getgenv().Destroy(Players[v].Character["Left Arm"])
+			getgenv().Destroy(Players[v].Character["Left Leg"])
+			getgenv().Destroy(Players[v].Character["Right Arm"])
+			getgenv().Destroy(Players[v].Character["Right Leg"])
 		else
-			_G.Destroy(Players[v].Character["LeftUpperArm"])
-			_G.Destroy(Players[v].Character["LeftUpperLeg"])
-			_G.Destroy(Players[v].Character["RightUpperArm"])
-			_G.Destroy(Players[v].Character["RightUpperLeg"])
+			getgenv().Destroy(Players[v].Character["LeftUpperArm"])
+			getgenv().Destroy(Players[v].Character["LeftUpperLeg"])
+			getgenv().Destroy(Players[v].Character["RightUpperArm"])
+			getgenv().Destroy(Players[v].Character["RightUpperLeg"])
 		end
 	end
 end)
@@ -9502,9 +9502,9 @@ nola.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
 		if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
-			_G.Destroy(Players[v].Character["Left Arm"])
+			getgenv().Destroy(Players[v].Character["Left Arm"])
 		else
-			_G.Destroy(Players[v].Character["LeftUpperArm"])
+			getgenv().Destroy(Players[v].Character["LeftUpperArm"])
 		end
 	end
 end)
@@ -9524,9 +9524,9 @@ noll.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
 		if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
-			_G.Destroy(Players[v].Character["Left Leg"])
+			getgenv().Destroy(Players[v].Character["Left Leg"])
 		else
-			_G.Destroy(Players[v].Character["LeftUpperLeg"])
+			getgenv().Destroy(Players[v].Character["LeftUpperLeg"])
 		end
 	end
 end)
@@ -9546,9 +9546,9 @@ nora.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
 		if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
-			_G.Destroy(Players[v].Character["Right Arm"])
+			getgenv().Destroy(Players[v].Character["Right Arm"])
 		else
-			_G.Destroy(Players[v].Character["RightUpperArm"])
+			getgenv().Destroy(Players[v].Character["RightUpperArm"])
 		end
 	end
 end)
@@ -9568,9 +9568,9 @@ norl.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
 		if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
-			_G.Destroy(Players[v].Character["Right Leg"])
+			getgenv().Destroy(Players[v].Character["Right Leg"])
 		else
-			_G.Destroy(Players[v].Character["RightUpperLeg"])
+			getgenv().Destroy(Players[v].Character["RightUpperLeg"])
 		end
 	end
 end)
@@ -9590,7 +9590,7 @@ nowaist.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
 		if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R15 then
-			_G.Destroy(Players[v].Character.UpperTorso.Waist)
+			getgenv().Destroy(Players[v].Character.UpperTorso.Waist)
 		end
 	end
 end)
@@ -9610,7 +9610,7 @@ noroot.MouseButton1Click:connect(function()
 	local players = getPlayer(target.Text, Players.LocalPlayer)
 	for i, v in pairs(players) do
 		if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R15 then
-			_G.Destroy(Players[v].Character.LowerTorso.Root)
+			getgenv().Destroy(Players[v].Character.LowerTorso.Root)
 		end
 	end
 end)
@@ -9691,7 +9691,7 @@ destroytool.Activated:connect(function()
 	explosion.DestroyJointRadiusPercent = 0
 	explosion.ExplosionType = Enum.ExplosionType.NoCraters
 	explosion.Position = mouse.Target.Position
-	_G.Destroy(mouse.Target)
+	getgenv().Destroy(mouse.Target)
 end)
 game:GetService("StarterGui"):SetCoreGuiEnabled('Backpack', true)
 Players.LocalPlayer.CharacterAdded:connect(function()
@@ -9722,7 +9722,7 @@ Players.LocalPlayer.CharacterAdded:connect(function()
 		explosion.DestroyJointRadiusPercent = 0
 		explosion.ExplosionType = Enum.ExplosionType.NoCraters
 		explosion.Position = mouse.Target.Position
-		_G.Destroy(mouse.Target)
+		getgenv().Destroy(mouse.Target)
 	end)
 	game:GetService("StarterGui"):SetCoreGuiEnabled('Backpack', true)
 end)
